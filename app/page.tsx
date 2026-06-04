@@ -8,6 +8,7 @@ import {
   type DropResult,
 } from "@hello-pangea/dnd";
 import clsx from "clsx";
+import { siteUrl } from "@/lib/site";
 
 type Feedback = "correct" | "incorrect";
 
@@ -199,7 +200,7 @@ export default function PredictlePage() {
   const share = async () => {
     if (!puzzle) return;
     const lines = orderedIds.map((id) => (feedbackById[id] || []).map(emoji).join(""));
-    const text = `Predictle 🔮\n${lines.join("\n")}\n\nPlay at https://predictle.app`;
+    const text = `Predictle 🔮\n${lines.join("\n")}\n\nPlay at ${siteUrl}`;
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);

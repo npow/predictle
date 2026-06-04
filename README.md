@@ -41,6 +41,7 @@ Finish a puzzle → **🔗 Challenge a friend** mints a 6-character code and cop
 - **`app/api/share`** — `POST {token}` → mints and returns a 6-char share code.
 - **`app/api/score`** — verifies the token, scores server-side (✅/❌), reveals answers on win/loss.
 - **`app/page.tsx`** — game UI (`@hello-pangea/dnd` drag-to-rank, locking, accumulating feedback, prob reveal, share, dedupe window, localStorage stats).
+- **SEO** — `app/layout.tsx` (title/description/keywords, Open Graph + Twitter cards, JSON-LD `WebApplication`), dynamic social image (`app/opengraph-image.tsx`, reused for Twitter), generated icons/`manifest`, and `robots.ts` + `sitemap.ts`. Set `NEXT_PUBLIC_SITE_URL` so canonical URLs, share links, and the sitemap point at your domain.
 
 ## Run
 
